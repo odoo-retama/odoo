@@ -76,6 +76,7 @@ class MailActivitySchedule(models.TransientModel):
         readonly=False, store=True, sanitize_style=True)
     activity_user_id = fields.Many2one(
         'res.users', 'Assigned to', compute='_compute_activity_user_id',
+        domain=[('share', '=', False)],
         readonly=False, store=True)
     chaining_type = fields.Selection(related='activity_type_id.chaining_type', readonly=True)
 

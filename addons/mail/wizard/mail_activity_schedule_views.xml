@@ -43,6 +43,7 @@
                             <group>
                                 <field name="date_deadline"/>
                                 <field name="activity_user_id" widget="many2one_avatar_user"
+                                       domain="[('share', '=', False)]"
                                        required="not plan_id"/>
                             </group>
                             <field name="note" class="oe-bordered-editor" placeholder="Log a note..."/>
